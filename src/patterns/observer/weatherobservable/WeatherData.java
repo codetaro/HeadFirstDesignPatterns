@@ -9,7 +9,8 @@ public class WeatherData extends Observable {
     private float humidity;
     private float pressure;
 
-    public WeatherData() {}
+    public WeatherData() {
+    }
 
     public void measurementsChanged() {
         setChanged();
@@ -18,6 +19,7 @@ public class WeatherData extends Observable {
 
     /**
      * Use this function to test DisplayElements
+     *
      * @param temperature
      * @param humidity
      * @param pressure

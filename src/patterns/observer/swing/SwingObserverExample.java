@@ -24,7 +24,7 @@ public class SwingObserverExample {
         // Set frame properties
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(BorderLayout.CENTER, button);
-        frame.setSize(300,300);
+        frame.setSize(300, 300);
         frame.setVisible(true);
     }
 

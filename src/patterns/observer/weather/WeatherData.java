@@ -40,6 +40,7 @@ public class WeatherData implements Subject {
 
     /**
      * Use this function to test DisplayElements
+     *
      * @param temperature
      * @param humidity
      * @param pressure

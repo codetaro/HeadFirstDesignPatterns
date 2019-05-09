@@ -2348,7 +2348,7 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 144,
+							"left": 16,
 							"top": 384,
 							"width": 77.208984375,
 							"height": 25,
@@ -2361,8 +2361,8 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 568,
-							"top": 504,
+							"left": 392,
+							"top": 496,
 							"width": 67.078125,
 							"height": 25,
 							"text": "Decorator"

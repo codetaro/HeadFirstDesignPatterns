@@ -1,19 +1,19 @@
-package patterns.factory.pizza;
+package patterns.factory.pizzas;
 
-public class NYStylePizzaStore extends PizzaStore {
+public class SimplePizzaFactory {
 
-    @Override
     public Pizza createPizza(String type) {
+
         Pizza pizza = null;
 
         if (type.equals("cheese")) {
-            pizza = new NYStyleCheesePizza();
+            pizza = new CheesePizza();
         } else if (type.equals("pepperoni")) {
-            pizza = new NYStylePepperoniPizza();
+            pizza = new PepperoniPizza();
         } else if (type.equals("clam")) {
-            pizza = new NYStyleClamPizza();
+            pizza = new ClamPizza();
         } else if (type.equals("veggie")) {
-            pizza = new NYStyleVeggiePizza();
+            pizza = new VeggiePizza();
         }
         return pizza;
     }

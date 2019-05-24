@@ -1,7 +1,8 @@
-package patterns.factory.pizza;
+package patterns.factory.pizzafm;
 
-public class ChicagoStylePizzaStore extends PizzaStore {
+import patterns.factory.pizzas.Pizza;
 
+public class ChicagoPizzaStore extends PizzaStore {
     @Override
     public Pizza createPizza(String type) {
         Pizza pizza = null;
@@ -15,6 +16,7 @@ public class ChicagoStylePizzaStore extends PizzaStore {
         } else if (type.equals("veggie")) {
             pizza = new ChicagoStyleVeggiePizza();
         }
+
         return pizza;
     }
 }

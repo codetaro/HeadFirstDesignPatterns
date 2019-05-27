@@ -1,6 +1,6 @@
 package patterns.factory.pizzafm;
 
-public class ChicagoStyleCheesePizza extends patterns.factory.pizzas.Pizza {
+public class ChicagoStyleCheesePizza extends Pizza {
 
     public ChicagoStyleCheesePizza() {
         name = "Chicago Style Deep Dish Cheese Pizza";

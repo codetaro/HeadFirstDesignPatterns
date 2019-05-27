@@ -1,7 +1,5 @@
 package patterns.factory.pizzafm;
 
-import patterns.factory.pizzas.Pizza;
-
 public class ChicagoPizzaStore extends PizzaStore {
     @Override
     public Pizza createPizza(String type) {

@@ -1,12 +1,12 @@
 package patterns.factory.pizzafm;
 
-public class NYStyleCheesePizza extends patterns.factory.pizzas.Pizza {
+public class NYStyleCheesePizza extends Pizza {
 
     public NYStyleCheesePizza() {
-        name = "";
-        dough = "";
-        sauce = "";
+        name = "NY Style Sauce and Cheese Pizza";
+        dough = "Thin Crust Dough";
+        sauce = "Marinara Sauce";
 
-        toppings.add("");
+        toppings.add("Grated Reggiano Cheese");
     }
 }

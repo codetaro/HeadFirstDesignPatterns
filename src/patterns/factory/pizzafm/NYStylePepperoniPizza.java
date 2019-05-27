@@ -1,6 +1,6 @@
 package patterns.factory.pizzafm;
 
-public class NYStylePepperoniPizza extends patterns.factory.pizzas.Pizza {
+public class NYStylePepperoniPizza extends Pizza {
 
     public NYStylePepperoniPizza() {
         name = "NY Style Pepperoni Pizza";

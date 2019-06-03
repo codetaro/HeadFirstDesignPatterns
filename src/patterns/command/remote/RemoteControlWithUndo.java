@@ -1,10 +1,11 @@
 package patterns.command.remote;
 
-public class RemoteControl {
+public class RemoteControlWithUndo {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand;  // 前一个命令被记录在这里
 
-    public RemoteControl() {
+    public RemoteControlWithUndo() {
         onCommands = new Command[7];
         offCommands = new Command[7];
 
@@ -14,6 +15,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommand = noCommand;  // 一开始没有所谓的“前一个命令”
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -25,12 +27,18 @@ public class RemoteControl {
         if (onCommands[slot] != null) {
             onCommands[slot].execute();
         }
+        undoCommand = onCommands[slot];
     }
 
     public void offButtonWasPressed(int slot) {
         if (offCommands[slot] != null) {
             offCommands[slot].execute();
         }
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonWasPressed() {
+        undoCommand.undo();
     }
 
     @Override
@@ -41,6 +49,9 @@ public class RemoteControl {
             stringBuffer.append("[slot " + i + "] " + onCommands[i].getClass().getName()
                     + "    " + offCommands[i].getClass().getName() + "\n");
         }
+
+        stringBuffer.append("[undo] " + undoCommand.getClass().getName());
+
         return stringBuffer.toString();
     }
 }

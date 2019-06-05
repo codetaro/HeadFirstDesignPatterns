@@ -33,7 +33,7 @@ public class RemoteLoaderWithMacro {
 
         // 4. 按下按钮，测试是否正常工作
         System.out.println(remoteControl);
-        System.out.println("--- Pushing Macro On---");
+        System.out.println("--- Pushing Macro On ---");
         remoteControl.onButtonWasPressed(0);
         System.out.println("--- Pushing Macro Off---");
         remoteControl.offButtonWasPressed(0);

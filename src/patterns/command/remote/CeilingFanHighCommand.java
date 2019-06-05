@@ -18,14 +18,19 @@ public class CeilingFanHighCommand implements Command {
     @Override
     public void undo() {
         // 将吊扇的速度设置回之前的值，达到撤销的目的
-        if (prevSpeed == CeilingFan.HIGH) {
-            ceilingFan.high();
-        } else if (prevSpeed == CeilingFan.MEDIUM) {
-            ceilingFan.medium();
-        } else if (prevSpeed == CeilingFan.LOW) {
-            ceilingFan.low();
-        } else if (prevSpeed == CeilingFan.OFF) {
-            ceilingFan.off();
+        switch (prevSpeed) {
+            case CeilingFan.HIGH:
+                ceilingFan.high();
+                break;
+            case CeilingFan.MEDIUM:
+                ceilingFan.medium();
+                break;
+            case CeilingFan.LOW:
+                ceilingFan.low();
+                break;
+            default:
+                ceilingFan.off();
+                break;
         }
     }
 }

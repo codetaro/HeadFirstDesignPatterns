@@ -9,6 +9,7 @@ public class HottubOffCommand implements Command {
 
     @Override
     public void execute() {
+        hottub.setTemperature(98);
         hottub.off();
     }
 

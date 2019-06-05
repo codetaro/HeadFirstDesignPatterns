@@ -10,6 +10,8 @@ public class HottubOnCommand implements Command {
     @Override
     public void execute() {
         hottub.on();
+        hottub.setTemperature(104);
+        hottub.circulate();
     }
 
     @Override

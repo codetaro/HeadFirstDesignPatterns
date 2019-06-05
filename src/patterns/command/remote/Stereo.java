@@ -24,9 +24,15 @@ public class Stereo {
     }
 
     public void setRadio() {
-        System.out.println(location + " stereo is set for Radio input");
+        System.out.println(location + " stereo is set for Radio");
     }
 
+    /**
+     * Code to set the volumn
+     * valid range: 1-11
+     *
+     * @param vol
+     */
     public void setVolumn(int vol) {
         System.out.println(location + " stereo volumn set to " + vol);
     }

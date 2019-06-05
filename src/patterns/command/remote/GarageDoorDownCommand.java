@@ -1,19 +1,19 @@
 package patterns.command.remote;
 
 public class GarageDoorDownCommand implements Command {
-    GarageDoor door;
+    GarageDoor garageDoor;
 
-    public GarageDoorDownCommand(GarageDoor door) {
-        this.door = door;
+    public GarageDoorDownCommand(GarageDoor garageDoor) {
+        this.garageDoor = garageDoor;
     }
 
     @Override
     public void execute() {
-        door.down();
+        garageDoor.down();
     }
 
     @Override
     public void undo() {
-        door.up();
+        garageDoor.up();
     }
 }

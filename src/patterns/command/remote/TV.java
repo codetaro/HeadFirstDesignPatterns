@@ -2,6 +2,8 @@ package patterns.command.remote;
 
 public class TV {
     String location;
+    int channel;
+    int volume;
 
     public TV(String location) {
         this.location = location;
@@ -9,7 +11,6 @@ public class TV {
 
     public void on() {
         System.out.println(location + " TV is on");
-        setInputChannel();
     }
 
     public void off() {
@@ -17,9 +18,12 @@ public class TV {
     }
 
     public void setInputChannel() {
+        this.channel = 3;
         System.out.println(location + " TV channel is set for DVD");
     }
 
-    public void setVolumn() {
+    public void setVolume() {
+        this.volume = 11;
+        System.out.println(location + " TV volume set to " + volume);
     }
 }

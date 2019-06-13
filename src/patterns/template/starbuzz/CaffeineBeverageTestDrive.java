@@ -4,7 +4,13 @@ public class CaffeineBeverageTestDrive {
 
     public static void main(String[] args) {
 
-        Tea myTea = new Tea();
-        myTea.prepareRecipe();
+        Tea teaHook = new Tea();
+        Coffee coffeeHook = new Coffee();
+
+        System.out.println("\nMaking tea...");
+        teaHook.prepareRecipe();
+
+        System.out.println("\nMaking coffee...");
+        coffeeHook.prepareRecipe();
     }
 }

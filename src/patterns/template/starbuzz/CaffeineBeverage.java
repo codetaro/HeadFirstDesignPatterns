@@ -25,6 +25,7 @@ public abstract class CaffeineBeverage {
         System.out.println("Pouring into cup");
     }
 
+    // 钩子
     boolean customerWantsCondiments() {
         return true;
     }

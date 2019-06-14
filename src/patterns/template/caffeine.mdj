@@ -59,9 +59,9 @@
 											"font": "Arial;13;1",
 											"left": 285,
 											"top": 247,
-											"width": 107.30712890625,
+											"width": 109.8271484375,
 											"height": 13,
-											"text": "Beverage"
+											"text": "CaffeineBeverage"
 										},
 										{
 											"_type": "LabelView",
@@ -90,7 +90,7 @@
 									"font": "Arial;13;0",
 									"left": 280,
 									"top": 240,
-									"width": 117.30712890625,
+									"width": 119.8271484375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFrRQ+rLNqEyiA="
@@ -117,7 +117,7 @@
 									"font": "Arial;13;0",
 									"left": 280,
 									"top": 265,
-									"width": 117.30712890625,
+									"width": 119.8271484375,
 									"height": 10
 								},
 								{
@@ -142,7 +142,7 @@
 											"font": "Arial;13;0",
 											"left": 285,
 											"top": 280,
-											"width": 107.30712890625,
+											"width": 109.8271484375,
 											"height": 13,
 											"text": "+prepareRecipe()",
 											"horizontalAlignment": 0
@@ -159,7 +159,7 @@
 											"font": "Arial;13;2",
 											"left": 285,
 											"top": 295,
-											"width": 107.30712890625,
+											"width": 109.8271484375,
 											"height": 13,
 											"text": "+brew()",
 											"horizontalAlignment": 0
@@ -176,7 +176,7 @@
 											"font": "Arial;13;2",
 											"left": 285,
 											"top": 310,
-											"width": 107.30712890625,
+											"width": 109.8271484375,
 											"height": 13,
 											"text": "+addCondiments()",
 											"horizontalAlignment": 0
@@ -193,7 +193,7 @@
 											"font": "Arial;13;0",
 											"left": 285,
 											"top": 325,
-											"width": 107.30712890625,
+											"width": 109.8271484375,
 											"height": 13,
 											"text": "+boilWater()",
 											"horizontalAlignment": 0
@@ -210,7 +210,7 @@
 											"font": "Arial;13;0",
 											"left": 285,
 											"top": 340,
-											"width": 107.30712890625,
+											"width": 109.8271484375,
 											"height": 13,
 											"text": "+pourInCup()",
 											"horizontalAlignment": 0
@@ -219,7 +219,7 @@
 									"font": "Arial;13;0",
 									"left": 280,
 									"top": 275,
-									"width": 117.30712890625,
+									"width": 119.8271484375,
 									"height": 83
 								},
 								{
@@ -255,7 +255,7 @@
 							"containerChangeable": true,
 							"left": 280,
 							"top": 240,
-							"width": 117.30712890625,
+							"width": 119.8271484375,
 							"height": 118,
 							"nameCompartment": {
 								"$ref": "AAAAAAFrRQ+rLNqDMKI="
@@ -812,7 +812,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 389,
+									"left": 390,
 									"top": 387,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -833,7 +833,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 377,
+									"left": 378,
 									"top": 396,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -854,7 +854,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 414,
+									"left": 415,
 									"top": 370,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -873,7 +873,7 @@
 								"$ref": "AAAAAAFrRRCg2dr08YY="
 							},
 							"lineStyle": 1,
-							"points": "423:413;382:358",
+							"points": "423:413;383:358",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFrRRChKNse3oA="
@@ -893,7 +893,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Beverage",
+					"name": "CaffeineBeverage",
 					"operations": [
 						{
 							"_type": "UMLOperation",

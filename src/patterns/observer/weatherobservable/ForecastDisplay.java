@@ -1,7 +1,7 @@
 package patterns.observer.weatherobservable;
 
-import java.util.Observer;
 import java.util.Observable;
+import java.util.Observer;
 
 public class ForecastDisplay implements Observer, DisplayElement {
     private float currentPressure = 29.92f;

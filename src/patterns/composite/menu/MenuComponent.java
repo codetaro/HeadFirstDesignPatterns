@@ -1,5 +1,7 @@
 package patterns.composite.menu;
 
+import java.util.Iterator;
+
 public abstract class MenuComponent {
 
     // 组合方法
@@ -35,4 +37,7 @@ public abstract class MenuComponent {
     public void print() {
         throw new UnsupportedOperationException();
     }
+
+    //
+    public abstract Iterator createIterator();
 }

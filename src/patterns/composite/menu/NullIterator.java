@@ -15,6 +15,6 @@ public class NullIterator implements Iterator {
 
     @Override
     public void remove() {
-
+        throw new UnsupportedOperationException();
     }
 }

@@ -44,6 +44,7 @@ public class Menu extends MenuComponent {
         System.out.println(", " + getDescription());
         System.out.println("---------------------");
 
+        // 内部迭代
         Iterator iterator = menuComponents.iterator();
         while (iterator.hasNext()) {
             MenuComponent menuComponent = (MenuComponent) iterator.next();

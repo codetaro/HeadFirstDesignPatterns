@@ -11,6 +11,20 @@ public class CompositeIterator implements Iterator {
     }
 
     @Override
+    public Object next() {
+        if (hasNext()) {
+            Iterator iterator = (Iterator) stack.peek();
+            MenuComponent component = (MenuComponent) iterator.next();
+            if (component instanceof Menu) {
+                stack.push(component.createIterator());
+            }
+            return component;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
     public boolean hasNext() {
         if (stack.empty()) {
             return false;
@@ -22,20 +36,6 @@ public class CompositeIterator implements Iterator {
             } else {
                 return true;
             }
-        }
-    }
-
-    @Override
-    public Object next() {
-        if (hasNext()) {
-            Iterator iterator = (Iterator) stack.peek();
-            MenuComponent component = (MenuComponent) iterator.next();
-            if (component instanceof Menu) {
-                stack.push(component.createIterator());
-            }
-            return component;
-        } else {
-            return null;
         }
     }
 

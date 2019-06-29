@@ -6,7 +6,8 @@ public class GumballMachine {
     final static int HAS_QUARTER = 2;
     final static int SOLD = 3;
 
-    int state = SOLD_OUT;  // 创建一个实例变量来持有状态值
+    // 创建一个实例变量持有当前状态
+    int state = SOLD_OUT;
     int count = 0;
 
     public GumballMachine(int count) {
@@ -16,11 +17,11 @@ public class GumballMachine {
         }
     }
 
-    /* all the actions that can happen in the system */
+    // 系统中所有可以发生的动作
     public void insertQuarter() {
         if (state == NO_QUARTER) {
-            state = HAS_QUARTER;
             System.out.println("You inserted a quarter");
+            state = HAS_QUARTER;
         } else if (state == HAS_QUARTER) {
             System.out.println("You can't insert another quarter");
         } else if (state == SOLD) {
@@ -57,7 +58,8 @@ public class GumballMachine {
         }
     }
 
-    public void dispense() {  // more of an internal action the machine invokes on itself
+    // more of an internal action the machine invokes on itself
+    public void dispense() {
         if (state == NO_QUARTER) {
             System.out.println("You need to pay first");
         } else if (state == HAS_QUARTER) {
@@ -76,7 +78,7 @@ public class GumballMachine {
         }
     }
 
-    /* other methods */
+    // 其它方法
     @Override
     public String toString() {
         StringBuffer result = new StringBuffer();
@@ -98,5 +100,8 @@ public class GumballMachine {
         }
         result.append("\n");
         return result.toString();
+    }
+
+    public void refill() {
     }
 }

@@ -28,7 +28,7 @@ public class GumballMachineTestDrive {
         gumballMachine.insertQuarter();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
+        gumballMachine.insertQuarter();  // Now for the stress testing...
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();

@@ -79,6 +79,11 @@ public class GumballMachine {
     }
 
     // 其它方法
+    public void refill(int numGumBalls) {
+        this.count = numGumBalls;
+        state = NO_QUARTER;
+    }
+
     @Override
     public String toString() {
         StringBuffer result = new StringBuffer();
@@ -100,8 +105,5 @@ public class GumballMachine {
         }
         result.append("\n");
         return result.toString();
-    }
-
-    public void refill() {
     }
 }

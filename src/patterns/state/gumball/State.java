@@ -1,7 +1,5 @@
 package patterns.state.gumball;
 
-import java.util.*;
-
 /**
  *
  */
@@ -27,4 +25,5 @@ public interface State {
      */
     public void dispense();
 
+    public void refill();
 }

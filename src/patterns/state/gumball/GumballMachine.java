@@ -5,6 +5,7 @@ public class GumballMachine {
     State hasQuarterState;
     State soldState;
     State soldOutState;
+    State winnerState;
 
     // 创建一个实例变量持有当前状态
     State state = soldOutState;
@@ -15,6 +16,7 @@ public class GumballMachine {
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
         soldOutState = new SoldOutState(this);
+        winnerState = new WinnerState(this);
 
         this.count = numberGumballs;
         if (numberGumballs > 0) {
@@ -38,10 +40,6 @@ public class GumballMachine {
         state.dispense();
     }
 
-    void setState(State state) {
-        this.state = state;
-    }
-
     void releaseBall() {
         System.out.println("A gumball comes rolling out the slot...");
         if (count != 0) {
@@ -49,7 +47,17 @@ public class GumballMachine {
         }
     }
 
-    // Getters
+    void refill(int numGumBalls) {
+        this.count += numGumBalls;
+        System.out.println("The gumball machine was just refilled; it's new count is: " + this.count);
+        state.refill();
+    }
+
+    // Setters & Getters
+    void setState(State state) {
+        this.state = state;
+    }
+
     public State getNoQuarterState() {
         return noQuarterState;
     }
@@ -66,32 +74,25 @@ public class GumballMachine {
         return soldOutState;
     }
 
+    public State getWinnerState() {
+        return winnerState;
+    }
+
     public int getCount() {
         return count;
     }
 
-    // more of an internal action the machine invokes on itself
-    public void dispense() {
-    }
-
     // 其它方法
-    public void refill(int numGumBalls) {
-        this.count += numGumBalls;
-        System.out.println("The gumball machine was just refilled; it's new count is: " + this.count);
-//        state.refill();
-    }
-
     @Override
     public String toString() {
         StringBuffer result = new StringBuffer();
         result.append("\nMighty Gumball, Inc.");
-        result.append("\nJava-enabled Standing Gumball Model #2004\n");
-        result.append("Inventory: " + count + " gumball");
+        result.append("\nJava-enabled Standing Gumball Model #2004");
+        result.append("\nInventory: " + count + " gumball");
         if (count != 1) {
             result.append("s");
         }
-        result.append("\nMachine is " + state);
-        result.append("\n");
+        result.append("\nMachine is " + state + "\n");
         return result.toString();
     }
 }

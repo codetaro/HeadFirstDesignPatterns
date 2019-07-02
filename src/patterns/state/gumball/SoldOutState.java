@@ -43,6 +43,11 @@ public class SoldOutState implements State {
     }
 
     @Override
+    public void refill() {
+        gumballMachine.setState(gumballMachine.getNoQuarterState());
+    }
+
+    @Override
     public String toString() {
         return "sold out";
     }

@@ -1,5 +1,7 @@
 package patterns.proxy.gumball;
 
+import java.rmi.RemoteException;
+
 public class GumballMonitorTestDrive {
 
     public static void main(String[] args) {
@@ -10,8 +12,13 @@ public class GumballMonitorTestDrive {
             System.exit(1);
         }
 
-        count = Integer.parseInt(args[1]);
-        GumballMachine gumballMachine = new GumballMachine(args[0], count);
+        GumballMachine gumballMachine = null;
+        try {
+            count = Integer.parseInt(args[1]);
+            gumballMachine = new GumballMachine(args[0], count);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
 
         GumballMonitor monitor = new GumballMonitor(gumballMachine);
 

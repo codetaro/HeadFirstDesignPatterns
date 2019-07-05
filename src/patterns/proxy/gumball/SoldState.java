@@ -4,7 +4,7 @@ package patterns.proxy.gumball;
  *
  */
 public class SoldState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     /**
      * Default constructor

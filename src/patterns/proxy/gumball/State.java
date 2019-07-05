@@ -1,9 +1,11 @@
 package patterns.proxy.gumball;
 
+import java.io.Serializable;
+
 /**
  *
  */
-public interface State {
+public interface State extends Serializable {
 
     /**
      *

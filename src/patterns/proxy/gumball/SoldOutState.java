@@ -5,7 +5,7 @@ package patterns.proxy.gumball;
  * refills the Gumball Machine.
  */
 public class SoldOutState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     /**
      * Default constructor

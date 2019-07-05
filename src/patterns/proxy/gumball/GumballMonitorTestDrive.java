@@ -1,22 +1,33 @@
 package patterns.proxy.gumball;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
 public class GumballMonitorTestDrive {
 
     public static void main(String[] args) {
-        int count = 0;
+        String[] location = {
+                "rmi://192.168.2.137/santafe",
+                "rmi://192.168.2.137/boulder",
+                "rmi://192.168.2.137/seattle"};
 
-        if (args.length < 2) {
-            System.out.println("GumballMachine <name> <inventory>");
-            System.exit(1);
+        GumballMonitor[] monitor = new GumballMonitor[location.length];
+
+        for (int i = 0; i < location.length; i++) {
+            try {
+                // 返回一个远程糖果机的代理
+                GumballMachineRemote machine = (GumballMachineRemote) Naming.lookup(location[i]);
+                monitor[i] = new GumballMonitor(machine);
+                System.out.println(monitor[i]);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        count = Integer.parseInt(args[1]);
-        GumballMachine gumballMachine = new GumballMachine(args[0], count);
-
-        GumballMonitor monitor = new GumballMonitor(gumballMachine);
-
-        // 其他的测试代码
-
-        monitor.report();
+        for (int i = 0; i < monitor.length; i++) {
+            if (monitor[i] != null) monitor[i].report();
+        }
     }
 }

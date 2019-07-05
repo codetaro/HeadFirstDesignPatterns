@@ -16,7 +16,8 @@ public class GumballMachineTestDrive {
             count = Integer.parseInt(args[1]);
             gumballMachine = new GumballMachine(args[0], count);
             // publish the GumballMachine_Stub under the name gumballmachine
-            Naming.rebind("//" + args[0] + "/gumballmachine", gumballMachine);
+//            Naming.rebind("//" + args[0] + "/gumballmachine", gumballMachine);
+            Naming.rebind(args[0], gumballMachine);
         } catch (Exception e) {
             e.printStackTrace();
         }

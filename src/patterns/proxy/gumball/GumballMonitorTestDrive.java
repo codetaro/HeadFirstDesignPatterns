@@ -8,10 +8,11 @@ import java.rmi.RemoteException;
 public class GumballMonitorTestDrive {
 
     public static void main(String[] args) {
+        // 192.168.2.137
         String[] location = {
-                "rmi://192.168.2.137/santafe",
-                "rmi://192.168.2.137/boulder",
-                "rmi://192.168.2.137/seattle"};
+                "rmi://localhost/santafe",
+                "rmi://localhost/boulder",
+                "rmi://localhost/seattle"};
 
         GumballMonitor[] monitor = new GumballMonitor[location.length];
 

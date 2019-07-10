@@ -1,12 +1,13 @@
 package patterns.proxy.cd;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class ImageIconNotReadyState implements State {
-    ImageProxyRefactor imageProxy;
+    ImageProxyRefactor proxyRefactor;
 
-    public ImageIconNotReadyState(ImageProxyRefactor imageProxy) {
-        this.imageProxy = imageProxy;
+    public ImageIconNotReadyState(ImageProxyRefactor proxyRefactor) {
+        this.proxyRefactor = proxyRefactor;
     }
 
     @Override
@@ -21,16 +22,20 @@ public class ImageIconNotReadyState implements State {
 
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-        g.drawString("Loading CD cover, please wait...", x + 300, y + 190);
+        g.drawString("Loading CD cover, please wait...", x, y);
         Thread retrievalThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-//                    imageProxy.setState();
+                    proxyRefactor.setImageIcon(
+                            new ImageIcon(proxyRefactor.getImageURL(), "CD Cover"));
+                    proxyRefactor.setState(proxyRefactor.getImageIconReadyState());
+                    c.repaint();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
+        retrievalThread.start();
     }
 }

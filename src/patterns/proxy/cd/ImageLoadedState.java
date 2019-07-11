@@ -2,10 +2,10 @@ package patterns.proxy.cd;
 
 import java.awt.*;
 
-public class ImageIconReadyState implements State {
+public class ImageLoadedState implements State {
     ImageProxyRefactor proxyRefactor;
 
-    public ImageIconReadyState(ImageProxyRefactor proxyRefactor) {
+    public ImageLoadedState(ImageProxyRefactor proxyRefactor) {
         this.proxyRefactor = proxyRefactor;
     }
 

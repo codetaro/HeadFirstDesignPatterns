@@ -6,19 +6,19 @@ import java.net.URL;
 
 public class ImageProxyRefactor implements Icon {
 
-    State imageIconNotReadyState;
-    State imageIconReadyState;
+    State imageNotLoadedState;
+    State imageLoadedState;
 
     State state;
     ImageIcon imageIcon;
     URL imageURL;
 
     public ImageProxyRefactor(URL imageURL) {
-        imageIconNotReadyState = new ImageIconNotReadyState(this);
-        imageIconReadyState = new ImageIconReadyState(this);
+        imageNotLoadedState = new ImageNotLoadedState(this);
+        imageLoadedState = new ImageLoadedState(this);
 
         this.imageURL = imageURL;  // 这是我们希望显示的图像所在的位置
-        state = imageIconNotReadyState;
+        state = imageNotLoadedState;
     }
 
     /* 图像加载完毕前，返回默认的宽和高。图像加载完毕后，转给imageIcon处理。 */
@@ -38,20 +38,20 @@ public class ImageProxyRefactor implements Icon {
     }
 
     /* Getters & Setters */
-    public State getImageIconNotReadyState() {
-        return imageIconNotReadyState;
+    public State getImageNotLoadedState() {
+        return imageNotLoadedState;
     }
 
-    public void setImageIconNotReadyState(State imageIconNotReadyState) {
-        this.imageIconNotReadyState = imageIconNotReadyState;
+    public void setImageNotLoadedState(State imageNotLoadedState) {
+        this.imageNotLoadedState = imageNotLoadedState;
     }
 
-    public State getImageIconReadyState() {
-        return imageIconReadyState;
+    public State getImageLoadedState() {
+        return imageLoadedState;
     }
 
-    public void setImageIconReadyState(State imageIconReadyState) {
-        this.imageIconReadyState = imageIconReadyState;
+    public void setImageLoadedState(State imageLoadedState) {
+        this.imageLoadedState = imageLoadedState;
     }
 
     public ImageIcon getImageIcon() {

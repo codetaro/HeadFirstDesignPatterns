@@ -33,7 +33,7 @@ public class MatchMakingTestDrive {
     private void drive() {
         PersonBean joe = getPersonFromDatabase("Joe Javabean");
         PersonBean proxy = getProxy(new OwnerInvocationHandler(), joe);
-        System.out.println("Name is " + proxy.getName());
+        System.out.println("\nName is " + proxy.getName());
         proxy.setInterests("bowling, Go");
         System.out.println("Interests set from owner proxy");
         try {
@@ -44,7 +44,7 @@ public class MatchMakingTestDrive {
         System.out.println("Rating is " + proxy.getHotOrNotRating());
 
         proxy = getProxy(new NonOwnerInvocationHandler(), joe);
-        System.out.println("Name is " + proxy.getName());
+        System.out.println("\nName is " + proxy.getName());
         try {
             proxy.setInterests("bowling, Go");
         } catch (Exception e) {

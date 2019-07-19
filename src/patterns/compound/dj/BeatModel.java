@@ -122,7 +122,10 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
             int key = list[i];
             if (key != 0) {
                 track.add(makeEvent(144, 9, key, 100, i));
-                track.add(makeEvent(128, 9, key, 100, i+1));
+                MidiEvent midiEvent =
+                        makeEvent(128, 9, key, 100, i + 1);
+                track.add(midiEvent);
+                track.add(makeMetaEvent(midiEvent, i + 2));
             }
         }
     }
@@ -131,11 +134,26 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
         MidiEvent event = null;
         try {
             ShortMessage a = new ShortMessage();
-            a.setMessage(comd,chan,one,two);
-            event = new MidiEvent(a,tick);
+            a.setMessage(comd, chan, one, two);
+            event = new MidiEvent(a, tick);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return event;
+    }
+
+    private MidiEvent makeMetaEvent(MidiEvent midiEvent, int tick) {
+        MidiEvent event = null;
+
+        try {
+            MetaMessage message = new MetaMessage(47,
+                    midiEvent.getMessage().getMessage(),
+                    midiEvent.getMessage().getLength());
+            event = new MidiEvent(message, tick);
+        } catch (InvalidMidiDataException e) {
+            e.printStackTrace();
+        }
+
         return event;
     }
 }

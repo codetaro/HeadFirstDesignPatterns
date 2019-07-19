@@ -59,9 +59,9 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         JFrame.setDefaultLookAndFeelDecorated(true);
         controlFrame = new JFrame("Control");
         controlFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        controlFrame.setSize(new Dimension(100,80));
+        controlFrame.setSize(new Dimension(100, 80));
 
-        controlPanel = new JPanel(new GridLayout(1,2));
+        controlPanel = new JPanel(new GridLayout(1, 2));
 
         menuBar = new JMenuBar();
         menu = new JMenu("DJ Control");
@@ -95,29 +95,29 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         bpmTextField = new JTextField(2);
         bpmLabel = new JLabel("Enter BPM:", SwingConstants.RIGHT);
         setBPMButton = new JButton("Set");
-        setBPMButton.setSize(new Dimension(10,40));
+        setBPMButton.setSize(new Dimension(10, 40));
         increaseBPMButton = new JButton(">>");
         decreaseBPMButton = new JButton("<<");
         setBPMButton.addActionListener(this);
         increaseBPMButton.addActionListener(this);
         decreaseBPMButton.addActionListener(this);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(1,2));
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 2));
         buttonPanel.add(decreaseBPMButton);
         buttonPanel.add(increaseBPMButton);
 
-        JPanel enterPanel = new JPanel(new GridLayout(1,2));
+        JPanel enterPanel = new JPanel(new GridLayout(1, 2));
         enterPanel.add(bpmLabel);
         enterPanel.add(bpmTextField);
 
-        JPanel insideControlPanel = new JPanel(new GridLayout(3,1));
+        JPanel insideControlPanel = new JPanel(new GridLayout(3, 1));
         insideControlPanel.add(enterPanel);
         insideControlPanel.add(setBPMButton);
         insideControlPanel.add(buttonPanel);
         controlPanel.add(insideControlPanel);
 
-        bpmLabel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
-        bpmOutputLabel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+        bpmLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        bpmOutputLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         controlFrame.getRootPane().setDefaultButton(setBPMButton);
         controlFrame.getContentPane().add(controlPanel, BorderLayout.CENTER);

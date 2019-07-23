@@ -1,8 +1,13 @@
 package patterns.compound.dj;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class DJViewServlet extends HttpSevlet {
+public class DJViewServlet extends HttpServlet {
 
     /**
      * 当Servlet第一次创建时，init()方法会被调用
@@ -35,9 +40,9 @@ public class DJViewServlet extends HttpSevlet {
         if (increase != null) beatModel.setBPM(beatModel.getBPM() + 1);
 
         String on = request.getParameter("on");
-        if (on != null) beatModel.start();
+        if (on != null) beatModel.on();
         String off = request.getParameter("off");
-        if (off != null) beatModel.stop();
+        if (off != null) beatModel.off();
 
         request.setAttribute("beatModel", beatModel);
 

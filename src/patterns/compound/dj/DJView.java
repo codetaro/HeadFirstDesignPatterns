@@ -38,10 +38,11 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
 
     // 在这里创建所有的Swing组件
     public void createView() {
-        viewPanel = new JPanel(new GridLayout(1, 2));
         viewFrame = new JFrame("View");
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewFrame.setSize(new Dimension(100, 80));
+
+        viewPanel = new JPanel(new GridLayout(1, 2));
         bpmOutputLabel = new JLabel("offline", SwingConstants.CENTER);
         beatBar = new BeatBar();
         beatBar.setValue(0);
@@ -49,6 +50,7 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         bpmPanel.add(beatBar);
         bpmPanel.add(bpmOutputLabel);
         viewPanel.add(bpmPanel);
+
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
         viewFrame.pack();
         viewFrame.setVisible(true);
@@ -62,7 +64,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         controlFrame.setSize(new Dimension(100, 80));
 
         controlPanel = new JPanel(new GridLayout(1, 2));
-
         menuBar = new JMenuBar();
         menu = new JMenu("DJ Control");
         startMenuItem = new JMenuItem("Start");
@@ -121,7 +122,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
 
         controlFrame.getRootPane().setDefaultButton(setBPMButton);
         controlFrame.getContentPane().add(controlPanel, BorderLayout.CENTER);
-
         controlFrame.pack();
         controlFrame.setVisible(true);
     }

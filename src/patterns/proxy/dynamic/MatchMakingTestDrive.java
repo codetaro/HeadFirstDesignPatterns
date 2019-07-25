@@ -11,6 +11,11 @@ public class MatchMakingTestDrive {
         initializeDatabase();
     }
 
+    public static void main(String[] args) {
+        MatchMakingTestDrive test = new MatchMakingTestDrive();
+        test.drive();
+    }
+
     private void initializeDatabase() {
         PersonBean joe = new PersonBeanImpl();
         joe.setName("Joe Javabean");
@@ -23,11 +28,6 @@ public class MatchMakingTestDrive {
         kelly.setInterests("ebay, movies, music");
         kelly.setHotOrNotRating(6);
         datingDB.put(kelly.getName(), kelly);
-    }
-
-    public static void main(String[] args) {
-        MatchMakingTestDrive test = new MatchMakingTestDrive();
-        test.drive();
     }
 
     private void drive() {

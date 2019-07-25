@@ -1,13 +1,17 @@
 package patterns.compound.simduck;
 
 public class QuackCounter implements Quackable {
+    static int numberOfQuacks;
     Observable observable;
     Quackable duck;
-    static int numberOfQuacks;
 
     public QuackCounter(Quackable duck) {
         this.duck = duck;
         observable = new Observable(this);
+    }
+
+    public static int getNumberOfQuacks() {
+        return numberOfQuacks;
     }
 
     @Override
@@ -15,10 +19,6 @@ public class QuackCounter implements Quackable {
         duck.quack();
         numberOfQuacks++;
         notifyObservers();
-    }
-
-    public static int getNumberOfQuacks() {
-        return numberOfQuacks;
     }
 
     @Override

@@ -74,14 +74,14 @@ public class GumballMachine extends UnicastRemoteObject implements GumballMachin
         state.refill();
     }
 
-    // Setters & Getters
-    void setState(State state) {
-        this.state = state;
-    }
-
     @Override
     public State getState() {
         return state;
+    }
+
+    // Setters & Getters
+    void setState(State state) {
+        this.state = state;
     }
 
     public State getNoQuarterState() {

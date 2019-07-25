@@ -23,13 +23,13 @@ public class HeartAdapter implements BeatModelInterface {
     }
 
     @Override
-    public void setBPM(int bpm) {
-        // 我们不希望对心脏做这种事，所以再次让此方法“无操作”
+    public int getBPM() {
+        return heart.getHeartRate();
     }
 
     @Override
-    public int getBPM() {
-        return heart.getHeartRate();
+    public void setBPM(int bpm) {
+        // 我们不希望对心脏做这种事，所以再次让此方法“无操作”
     }
 
     @Override

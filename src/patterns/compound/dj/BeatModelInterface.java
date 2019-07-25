@@ -7,12 +7,11 @@ public interface BeatModelInterface {
 
     void off();
 
+    /* 这些方法允许视图和控制器取得状态，并变成观察者 */
+    int getBPM();  // 如果返回值为0，表示节拍器是关闭的
+
     void setBPM(int bpm);
 
-    // 如果返回值为0，表示节拍器是关闭的
-    int getBPM();
-
-    /* 这些方法允许视图和控制器取得状态，并变成观察者 */
     void registerObserver(BeatObserver o);
 
     void removeObserver(BeatObserver o);

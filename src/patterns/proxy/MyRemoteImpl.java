@@ -9,11 +9,6 @@ public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
     public MyRemoteImpl() throws RemoteException {
     }
 
-    @Override
-    public String sayHello() {
-        return "Server says, 'Hey'";
-    }
-
     public static void main(String[] args) {
 
         try {
@@ -22,5 +17,10 @@ public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public String sayHello() {
+        return "Server says, 'Hey'";
     }
 }

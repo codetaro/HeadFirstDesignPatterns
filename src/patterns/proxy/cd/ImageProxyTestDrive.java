@@ -13,10 +13,6 @@ public class ImageProxyTestDrive {
     JMenu menu;
     Hashtable<String, String> cds = new Hashtable<>();
 
-    public static void main(String[] args) throws Exception {
-        ImageProxyTestDrive testDrive = new ImageProxyTestDrive();
-    }
-
     public ImageProxyTestDrive() throws Exception {
         cds.put("Buddha Bar", "http://images.amazon.com/images/P/B00009XBYK.01.LZZZZZZZ.jpg");
         cds.put("Ima", "http://images.amazon.com/images/P/B000005IRM.01.LZZZZZZZ.jpg");
@@ -49,6 +45,10 @@ public class ImageProxyTestDrive {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
+    }
+
+    public static void main(String[] args) throws Exception {
+        ImageProxyTestDrive testDrive = new ImageProxyTestDrive();
     }
 
     private URL getCDUrl(String name) {

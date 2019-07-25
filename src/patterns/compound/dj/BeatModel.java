@@ -30,15 +30,15 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     }
 
     @Override
+    public int getBPM() {
+        return bpm;
+    }
+
+    @Override
     public void setBPM(int bpm) {
         this.bpm = bpm;
         sequencer.setTempoInBPM(getBPM());
         notifyBPMObservers();
-    }
-
-    @Override
-    public int getBPM() {
-        return bpm;
     }
 
     void beatEvent() {
